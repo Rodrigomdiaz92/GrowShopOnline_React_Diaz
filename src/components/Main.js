@@ -1,5 +1,11 @@
+import ItemListContainer from "./main/ItemListContainer";
+
 const Main = () => {
-  return <main>Este es el main</main>;
+  return (
+    <main>
+      <ItemListContainer nombre="Rodrigo" ubicacion="Quilmes" />
+    </main>
+  );
 };
 
 export default Main;
