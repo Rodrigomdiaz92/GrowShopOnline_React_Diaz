@@ -1,7 +1,10 @@
 import { Container } from "react-bootstrap";
 import { MdLocationOn } from "react-icons/md";
+import ItemCount from "./ItemCount";
 
 const ItemListContainer = (greeting) => {
+  const miOnAdd = () => {};
+
   return (
     <>
       <Container>
@@ -11,6 +14,7 @@ const ItemListContainer = (greeting) => {
           <MdLocationOn /> Aqui se muestran los productos disponibles segun tu
           ubicación: {greeting.ubicacion}{" "}
         </p>
+        <ItemCount onAdd={miOnAdd} stock={10} inicio={1} />
       </Container>
     </>
   );
