@@ -93,7 +93,7 @@ const ItemListContainer = (greeting) => {
       </Container>
       <Container>
         <ItemList
-          mensaje={loading ? "Cargando.." : "Productos disponibles:"}
+          mensaje={loading ? "Cargand.." : "Productos disponibles:"}
           productos={productos}
         />
       </Container>
