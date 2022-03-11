@@ -65,7 +65,7 @@ const ItemListContainer = (greeting) => {
     const promesa = new Promise((res, rej) => {
       setTimeout(() => {
         res(productosIniciales);
-      }, 5000);
+      }, 2000);
     });
 
     promesa
