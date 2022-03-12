@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { MdLocationOn } from "react-icons/md";
-import ItemCount from "./ItemCount";
+/* import ItemCount from "./ItemCount"; */
 import ItemList from "./ItemList";
 
 let productosIniciales = [
@@ -9,14 +9,17 @@ let productosIniciales = [
     id: 1,
     categoria: "Papelillos",
     nombre: "OCB",
+    web: "https://www.ocb.cl/",
+    origen: "Chile",
     precio: 50,
     stock: 10,
-    imagen: "ocbimg",
+    imagen: "./img/Papelillos/ocbimg.png",
   },
   {
     id: 2,
     categoria: "Filtros",
     nombre: "OCB",
+    web: "https://www.ocb.cl/",
     precio: 20,
     stock: 10,
     imagen: "ocbimg",
@@ -25,6 +28,8 @@ let productosIniciales = [
     id: 3,
     categoria: "Pipa",
     nombre: "OCB",
+    web: "https://www.ocb.cl/",
+    origen: "Chile",
     precio: 100,
     stock: 10,
     imagen: "ocbimg",
@@ -33,6 +38,8 @@ let productosIniciales = [
     id: 4,
     categoria: "Papelillos",
     nombre: "Rolling",
+    web: "https://www.lionrollingcircus.com/",
+    origen: "Argentina",
     precio: 60,
     stock: 10,
     imagen: "rollingimg",
@@ -41,6 +48,8 @@ let productosIniciales = [
     id: 5,
     categoria: "Filtros",
     nombre: "Rolling",
+    web: "https://www.lionrollingcircus.com/",
+    origen: "Argentina",
     precio: 40,
     stock: 10,
     imagen: "rollingimg",
@@ -49,6 +58,8 @@ let productosIniciales = [
     id: 6,
     categoria: "Pipa",
     nombre: "Rolling",
+    web: "https://www.lionrollingcircus.com/",
+    origen: "Argentina",
     precio: 150,
     stock: 10,
     imagen: "rollingimg",
@@ -56,7 +67,7 @@ let productosIniciales = [
 ];
 
 const ItemListContainer = (greeting) => {
-  const miOnAdd = () => {};
+  /*  const miOnAdd = () => {}; */
 
   const [loading, setLoading] = useState(true);
   const [productos, setProductos] = useState([]);
@@ -89,7 +100,7 @@ const ItemListContainer = (greeting) => {
           <MdLocationOn /> Aqui se muestran los productos disponibles segun tu
           ubicación: {greeting.ubicacion}{" "}
         </p>
-        <ItemCount onAdd={miOnAdd} stock={10} inicio={1} />
+        {/* <ItemCount onAdd={miOnAdd} stock={10} inicio={1} /> */}
       </Container>
       <Container>
         <ItemList

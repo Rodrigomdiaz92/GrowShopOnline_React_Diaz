@@ -7,9 +7,11 @@ let productoDetalle = [
     id: 1,
     categoria: "Papelillos",
     nombre: "OCB",
+    web: "https://www.ocb.cl/",
+    origen: "Chile",
     precio: 50,
     stock: 10,
-    imagen: "ocbimg",
+    imagen: "./img/Papelillos/ocbimg.png",
   },
 ];
 

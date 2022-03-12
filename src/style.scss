@@ -8,6 +8,8 @@ html,
 body,
 #root {
   height: 100vh;
+  font-family: "Carter One", cursive;
+  font-family: "Roboto", sans-serif;
 }
 /*
 footer {
@@ -18,16 +20,131 @@ footer {
   width: 100%;
 }*/
 
-h1 {
-  text-align: center;
-  background-color: yellow;
-  border-radius: 10px;
-  margin-top: 3rem;
-}
-p {
-  text-align: center;
+body {
+  background: rgb(81, 82, 82);
+  background: radial-gradient(
+    circle,
+    rgba(81, 82, 82, 1) 0%,
+    rgba(170, 170, 170, 1) 100%
+  );
 }
 
-main {
+h1 {
+  text-align: center;
   margin-top: 3rem;
+}
+/* p {
+  text-align: center;
+} */
+
+main {
+  margin-top: 1rem;
+  color: white;
+}
+
+/*------------------LISTA PRODUCTOS-------------------*/
+
+.lista-productos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 50px;
+}
+
+.producto {
+  border: 1px solid yellow;
+  border-radius: 20px;
+  color: white;
+  background-color: black;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
+.producto-titulo {
+  font-size: 1.2rem;
+  margin-left: 5%;
+}
+.producto-articulo {
+  color: grey;
+  font-size: 0.9rem;
+  margin-left: 5%;
+}
+
+.producto-datos {
+  font-size: 0.9rem;
+  margin-left: 5%;
+}
+.producto-precio {
+  font-size: 1.2rem;
+  margin-left: 5%;
+}
+
+/*------------------CONTADOR-------------------*/
+.contador {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  margin-left: 5%;
+}
+.contador-suma-resta {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contador-final {
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contador-boton {
+  padding: 5px 20px 5px 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin: 0rem 1rem 0rem 1rem;
+}
+
+.contador-boton-borrar {
+  padding: 5px;
+  font-style: bold;
+  color: white;
+  background-color: rgb(243, 93, 93);
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+.contador-boton-agregar {
+  padding: 5px;
+  font-style: bold;
+  color: white;
+  background-color: green;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+/*------------------DETALLE DE PRODUCTO-------------------*/
+.detalle-producto {
+  border: 2px solid yellow;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 500px;
+}
+
+.detalle-producto-imagen {
+  margin: auto auto auto auto;
+}
+.detalle-producto-info {
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  margin: auto auto auto auto;
+}
+
+.detalle-producto-compra {
+  grid-template-rows: 1fr 1fr;
+  margin: auto auto auto auto;
 }

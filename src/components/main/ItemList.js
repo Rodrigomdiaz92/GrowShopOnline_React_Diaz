@@ -6,9 +6,9 @@ const ItemList = (props) => {
   return (
     <>
       <p>{props.mensaje}</p>
-      <ul>
+      <div className="lista-productos">
         <Item datos={props.productos} />
-      </ul>
+      </div>
     </>
   );
 };
