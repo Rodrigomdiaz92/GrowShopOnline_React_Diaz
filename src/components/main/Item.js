@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 const Item = (props) => {
@@ -7,14 +8,17 @@ const Item = (props) => {
       {props.datos.map((producto, indice) => {
         return (
           <div className="producto">
-            <img src="" alt={producto.nombre} />
+            <div className="producto-img">
+              <img src={producto.imagen} alt={producto.nombre} />
+            </div>
             <h2 className="producto-titulo">
               {producto.nombre} {producto.categoria}
             </h2>
             <p className="producto-articulo">Articulo n°{producto.id}</p>
-            <a className="producto-datos" href="#">
-              Ver mas..
-            </a>
+            <Link className="producto-datos" to={`/producto/${producto.id}`}>
+              {" "}
+              Ver mas..{" "}
+            </Link>
             <p className="producto-precio">
               Precio por unidad: $ {producto.precio}
             </p>

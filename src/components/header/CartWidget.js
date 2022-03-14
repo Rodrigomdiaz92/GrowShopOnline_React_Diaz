@@ -3,7 +3,7 @@ import { FaSeedling } from "react-icons/fa";
 const CartWidget = () => {
   return (
     <>
-      <FaSeedling />
+      <img src="/icon.png" alt="GrowshopOnline" />
     </>
   );
 };

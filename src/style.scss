@@ -41,6 +41,39 @@ main {
   margin-top: 1rem;
   color: white;
 }
+/*------------------NAVBAR-------------------*/
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  background-color: #282c34;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-style: bold;
+  margin: 0rem 1rem 0rem 1rem;
+  &.active {
+    color: green;
+  }
+}
+
+.navbar-presentacion {
+  display: flex;
+  color: white;
+}
+
+.navbar-menu {
+  margin-right: 5rem;
+}
+
+.navbar-categorias {
+  margin-right: 3rem;
+}
+.navbar-categorias span {
+  color: yellow;
+}
 
 /*------------------LISTA PRODUCTOS-------------------*/
 
@@ -58,6 +91,15 @@ main {
   background-color: black;
   padding-bottom: 5%;
   padding-top: 5%;
+}
+
+.producto-img {
+  margin-left: 30%;
+}
+
+.producto-img img {
+  width: 60%;
+  border-radius: 20px;
 }
 
 .producto-titulo {
