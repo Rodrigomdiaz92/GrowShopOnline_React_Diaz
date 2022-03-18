@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 const Item = (props) => {
-  const miOnAdd = () => {};
+  /* const miOnAdd = () => {}; */
   return (
     <>
       {props.datos.map((producto, indice) => {
@@ -22,7 +22,7 @@ const Item = (props) => {
             <p className="producto-precio">
               Precio por unidad: $ {producto.precio}
             </p>
-            <ItemCount onAdd={miOnAdd} stock={producto.stock} inicio={1} />
+            {/* <ItemCount onAdd={miOnAdd} stock={producto.stock} inicio={1} /> */}
           </div>
         );
       })}

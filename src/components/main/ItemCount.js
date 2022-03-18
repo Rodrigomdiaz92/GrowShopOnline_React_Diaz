@@ -24,22 +24,26 @@ const ItemCount = (props) => {
     modificador(props.inicio);
   };
 
+  const agregarACarrito = () => {
+    props.onAdd(contador);
+  };
+
   return (
     <div className="contador">
       <div className="contador-suma-resta">
-        <button className="contador-boton" onClick={sumarStock}>
-          +
-        </button>
-        <span>Comprar: {contador}</span>
         <button className="contador-boton" onClick={restarStock}>
           -
+        </button>
+        <span>Comprar: {contador}</span>
+        <button className="contador-boton" onClick={sumarStock}>
+          +
         </button>
       </div>
       <div className="contador-final">
         <button className="contador-boton-borrar" onClick={restaurarStock}>
           BORRAR
         </button>
-        <button className="contador-boton-agregar" onClick={props.onAdd}>
+        <button className="contador-boton-agregar" onClick={agregarACarrito}>
           AGREGAR AL CARRITO
         </button>
       </div>
@@ -48,12 +52,3 @@ const ItemCount = (props) => {
 };
 
 export default ItemCount;
-
-/* 
-<div>
-      <h2>Contador: {contador}</h2>
-      <button onClick={sumarStock}>Sumar</button>
-      <button onClick={restarStock}>Restar</button>
-      <button onClick={restaurarStock}>Restaurar</button>
-      <button onClick={props.onAdd}>AGREGAR AL CARRITO</button>
-    </div> */

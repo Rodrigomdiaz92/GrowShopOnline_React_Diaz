@@ -1,7 +1,15 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = (props) => {
-  const miOnAdd = () => {};
+  const [elegido, setElegido] = useState(false);
+
+  const miOnAdd = (cantidadProductos) => {
+    if (cantidadProductos != undefined) {
+      setElegido(cantidadProductos);
+    }
+  };
   return (
     <>
       <p>{props.mensaje}</p>
@@ -38,7 +46,18 @@ const ItemDetail = (props) => {
               </div>
 
               <div className="detalle-producto-contador">
-                <ItemCount onAdd={miOnAdd} stock={producto.stock} inicio={1} />
+                {elegido ? null : (
+                  <ItemCount
+                    onAdd={miOnAdd}
+                    stock={producto.stock}
+                    inicio={1}
+                  />
+                )}
+                {elegido ? (
+                  <Link className="contador-boton-agregar" to="/carrito">
+                    Ir al Carrito
+                  </Link>
+                ) : null}
               </div>
             </div>
           </div>
