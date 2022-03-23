@@ -191,3 +191,22 @@ main {
   grid-template-rows: 1fr 1fr;
   margin: auto auto auto auto;
 }
+
+/*-------Carrito-----*/
+
+.producto-carrito {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 1fr 2fr 0.5fr;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  p {
+    font-style: oblique;
+  }
+}
+
+.img-carrito {
+  width: 40%;
+  border-radius: 30%;
+  border: 1px solid yellow;
+}

@@ -67,20 +67,20 @@ let productosIniciales = [
 
 const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
-  const [producto, setProducto] = useState([]);
+  const [producto, setProducto] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
     const promesa = new Promise((res, rej) => {
       setTimeout(() => {
         res(productosIniciales);
-      }, 2000);
+      }, 1000);
     });
 
     promesa
       .then((respuestaDeLaApi) => {
         if (id != undefined) {
-          const listafiltro = productosIniciales.filter(
+          const listafiltro = productosIniciales.find(
             (producto) => producto.id == id
           );
           setProducto(listafiltro);
