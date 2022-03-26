@@ -181,6 +181,9 @@ main {
 
 .detalle-producto-imagen {
   margin: auto auto auto auto;
+  img {
+    border-radius: 5%;
+  }
 }
 .detalle-producto-info {
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -209,4 +212,23 @@ main {
   width: 40%;
   border-radius: 30%;
   border: 1px solid yellow;
+}
+
+.titulo-no-cart {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.red {
+  background: red;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  margin-right: 15px;
+  text-align: center;
+  width: 1.6em;
 }

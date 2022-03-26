@@ -2,46 +2,24 @@ import { Container } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useContext } from "react";
 import { contexto } from "../contexto/CartContext";
+import CartDetail from "./CartDetail";
+import { NavLink } from "react-router-dom";
 
 export const Carrito = () => {
-  const { clear, carrito, removeItem } = useContext(contexto);
-  console.log(carrito);
+  const { cargando } = useContext(contexto);
 
   return (
-    <Container>
-      <div className="titulo-cart">
-        <h2>
-          {" "}
-          <AiOutlineShoppingCart />
-          Mis Pedidos
-        </h2>{" "}
-        <button onClick={clear} className="contador-boton-borrar">
-          Limpiar Carrito
-        </button>
-      </div>
-      {carrito.map((item) => (
-        <div className="producto-carrito">
-          <p>{item.count}X</p>
-          <img
-            className="img-carrito"
-            src={item.producto.imagen}
-            alt={item.producto.nombre}
-          />
-          <p>
-            {item.producto.nombre} {item.producto.categoria}
-          </p>
-          <p>Precio por unidad: $ {item.producto.precio}</p>
-          <button
-            onClick={() => {
-              removeItem(item.producto);
-            }}
-            className="contador-boton-borrar"
-          >
-            {" "}
-            X{" "}
-          </button>
-        </div>
-      ))}
-    </Container>
+    <>
+      {cargando ? (
+        <h2 className="titulo-no-cart">
+          No hay productos seleccionados{" "}
+          <NavLink className="contador-boton-agregar" to="/">
+            Ir a Tienda
+          </NavLink>
+        </h2>
+      ) : (
+        <CartDetail />
+      )}
+    </>
   );
 };

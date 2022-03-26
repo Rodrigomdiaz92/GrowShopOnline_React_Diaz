@@ -53,7 +53,7 @@ const ItemDetail = ({ producto, mensaje }) => {
             )}
             {elegido ? (
               <Link className="contador-boton-agregar" to="/carrito">
-                Ir al Carrito
+                Terminar mi compra
               </Link>
             ) : null}
           </div>
