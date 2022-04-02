@@ -2,10 +2,28 @@ import { Container } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useContext } from "react";
 import { contexto } from "../contexto/CartContext";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../Firebase";
 
 const CartDetail = () => {
   const { clear, carrito, removeItem, total } = useContext(contexto);
   console.log(carrito);
+
+  const terminarCompra = () => {
+    const orden = {
+      buyer: {
+        nombre: "Rodrigo",
+        telefono: "1161521487",
+        email: "rodrigodiaz@gmail.com",
+      },
+      items: carrito,
+      date: serverTimestamp(),
+      total: total,
+    };
+    const pedidoCollection = collection(db, "ordenes");
+    const pedido = addDoc(pedidoCollection, orden);
+    clear();
+  };
 
   return (
     <>
@@ -47,6 +65,9 @@ const CartDetail = () => {
       <Container>
         {" "}
         <h2>Total a Pagar: $ {total}</h2>{" "}
+        <button className="contador-boton-agregar" onClick={terminarCompra}>
+          Confirmar Compra
+        </button>
       </Container>
     </>
   );
