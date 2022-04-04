@@ -8,8 +8,7 @@ html,
 body,
 #root {
   height: 100vh;
-  font-family: "Carter One", cursive;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 /*
 footer {
@@ -49,10 +48,20 @@ main {
   background-color: #282c34;
 }
 
+.nav-categorias {
+  text-decoration: none;
+  color: black;
+}
+#cart-icon {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
 .navbar a {
   text-decoration: none;
-  color: white;
-  font-style: bold;
+  color: black;
+  font-weight: bold;
   margin: 0rem 1rem 0rem 1rem;
   &.active {
     color: green;
