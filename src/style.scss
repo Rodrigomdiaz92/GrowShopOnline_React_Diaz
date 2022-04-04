@@ -103,6 +103,9 @@ main {
 }
 
 .producto-titulo {
+  color: black;
+  font-weight: bold;
+  text-align: center;
   font-size: 1.2rem;
   margin-left: 5%;
 }
@@ -114,11 +117,13 @@ main {
 
 .producto-datos {
   font-size: 0.9rem;
-  margin-left: 5%;
+
+  text-decoration: none;
+  color: white;
 }
 .producto-precio {
-  font-size: 1.2rem;
-  margin-left: 5%;
+  color: black;
+  font-size: 0.9rem;
 }
 
 /*------------------CONTADOR-------------------*/
@@ -147,6 +152,10 @@ main {
   border: 2px solid white;
   border-radius: 5px;
   margin: 0rem 1rem 0rem 1rem;
+  font-weight: bold;
+}
+.contador-numero {
+  font-weight: bold;
 }
 
 .contador-boton-borrar {
@@ -179,11 +188,40 @@ main {
   height: 500px;
 }
 
+.detalle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 10px;
+  color: black;
+}
+
+.detalle-img {
+  width: 50%;
+}
+
+.detalle-titulo {
+  font-weight: bold;
+}
+
+.detalle-descripcion {
+  color: grey;
+  font-style: italic;
+}
+
+.detalle-2 {
+  display: grid;
+  grid-template-rows: 0.1fr 1fr;
+}
+
 .detalle-producto-imagen {
   margin: auto auto auto auto;
   img {
     border-radius: 5%;
   }
+}
+.detalle-3 {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .detalle-producto-info {
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
