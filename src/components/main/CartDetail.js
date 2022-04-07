@@ -1,28 +1,44 @@
-import { Container } from "react-bootstrap";
+import { Container, Form } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { contexto } from "../contexto/CartContext";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../Firebase";
 
 const CartDetail = () => {
   const { clear, carrito, removeItem, total } = useContext(contexto);
-  console.log(carrito);
+  /*  console.log(carrito); */
+
+  const [nombre, setNombre] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [email, setEmail] = useState("");
 
   const terminarCompra = () => {
     const orden = {
       buyer: {
-        nombre: "Rodrigo",
-        telefono: "1161521487",
-        email: "rodrigodiaz@gmail.com",
+        nombre: nombre,
+        telefono: telefono,
+        email: email,
       },
       items: carrito,
       date: serverTimestamp(),
       total: total,
     };
-    const pedidoCollection = collection(db, "ordenes");
-    const pedido = addDoc(pedidoCollection, orden);
+    /*  const pedidoCollection = collection(db, "ordenes");
+    const pedido = addDoc(pedidoCollection, orden); */
+    console.log(orden);
+
     clear();
+  };
+
+  const usuarioNombre = (e) => {
+    setNombre(e.target.value);
+  };
+  const usuarioTelefono = (e) => {
+    setTelefono(e.target.value);
+  };
+  const usuarioEmail = (e) => {
+    setEmail(e.target.value);
   };
 
   return (
@@ -69,6 +85,35 @@ const CartDetail = () => {
           Confirmar Compra
         </button>
       </Container>
+      <Container>
+        <Form>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Nombre y Apellido</Form.Label>
+            <Form.Control
+              type="name"
+              placeholder="Nombre y Apellido"
+              onChange={usuarioNombre}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Numero de telefono</Form.Label>
+            <Form.Control
+              type="tel"
+              placeholder="11-xxxx-xxxx"
+              onChange={usuarioTelefono}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Correo electronico</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="name@example.com"
+              onChange={usuarioEmail}
+            />
+          </Form.Group>
+        </Form>
+      </Container>
+      {/* <input type="text" name="nombre" onChange={usuarioChange} /> */}
     </>
   );
 };
