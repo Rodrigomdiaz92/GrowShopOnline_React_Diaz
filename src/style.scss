@@ -35,6 +35,32 @@ main {
 
   align-items: center;
 }
+
+/*--------------Quienes Somos----------------*/
+
+.presentacion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.presentacion-imagen img {
+  width: 100%;
+  border-radius: 10px 120px 10px 120px;
+}
+.presentacion-texto {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  align-self: center;
+}
+.tienda {
+  margin-top: 20px;
+  text-align: center;
+  h2 {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
 /*------------------NAVBAR-------------------*/
 .navbar {
   display: grid;

@@ -17,7 +17,9 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Quienes Somos</Nav.Link>
+            <Nav.Link href="/quienes-somos" title="Quienes Somos">
+              Quienes Somos
+            </Nav.Link>
 
             <NavDropdown
               variant="dark"

@@ -16,11 +16,14 @@ const Footer = () => {
                 height="30"
                 className="d-inline-block align-top"
               />{" "}
-              GrowShopOnline
+              GrowShopOnline®
             </Navbar.Brand>
           </NavLink>
           <Navbar.Brand>
-            <AiFillFacebook /> <AiFillInstagram />
+            <AiFillFacebook />
+            @growshoponline
+            <br /> <AiFillInstagram />
+            @growshoponline.ok
           </Navbar.Brand>
         </Container>
       </Navbar>
