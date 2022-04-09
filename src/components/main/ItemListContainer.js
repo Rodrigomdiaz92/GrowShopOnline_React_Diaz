@@ -1,11 +1,8 @@
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
-import { MdLocationOn } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import { db } from "../Firebase";
-
-/* import ItemCount from "./ItemCount"; */
 import ItemList from "./ItemList";
 
 const ItemListContainer = (greeting) => {
@@ -37,12 +34,7 @@ const ItemListContainer = (greeting) => {
     <>
       <Container>
         {" "}
-        <h1>Bienvenido a GrowShop Online {greeting.nombre}! </h1>
-        <p>
-          <MdLocationOn /> Aqui se muestran los productos disponibles segun tu
-          ubicación: {greeting.ubicacion}{" "}
-        </p>
-        {/* <ItemCount onAdd={miOnAdd} stock={10} inicio={1} /> */}
+        <h1>Bienvenido a GrowShop Online!</h1>
       </Container>
       <Container>
         <ItemList

@@ -10,14 +10,10 @@ body,
   height: 100vh;
   font-family: "Montserrat", sans-serif;
 }
-/*
+
 footer {
-  background-color: rgb(66, 64, 64);
-  color: white;
-  bottom: 0;
-  position: absolute;
-  width: 100%;
-}*/
+  margin-top: 30px;
+}
 
 body {
   background: rgb(81, 82, 82);
@@ -32,9 +28,6 @@ h1 {
   text-align: center;
   margin-top: 3rem;
 }
-/* p {
-  text-align: center;
-} */
 
 main {
   margin-top: 1rem;
@@ -245,6 +238,10 @@ main {
 }
 
 /*-------Carrito-----*/
+
+.titulo-datos {
+  text-align: center;
+}
 
 .producto-carrito {
   display: grid;

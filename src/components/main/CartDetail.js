@@ -2,12 +2,10 @@ import { Container, Form } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useContext, useState } from "react";
 import { contexto } from "../contexto/CartContext";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { db } from "../Firebase";
+import { serverTimestamp } from "firebase/firestore";
 
 const CartDetail = () => {
   const { clear, carrito, removeItem, total } = useContext(contexto);
-  /*  console.log(carrito); */
 
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
@@ -81,11 +79,9 @@ const CartDetail = () => {
       <Container>
         {" "}
         <h2>Total a Pagar: $ {total}</h2>{" "}
-        <button className="contador-boton-agregar" onClick={terminarCompra}>
-          Confirmar Compra
-        </button>
       </Container>
       <Container>
+        <h2 className="titulo-datos">Datos del Comprador</h2>
         <Form>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Nombre y Apellido</Form.Label>
@@ -112,8 +108,10 @@ const CartDetail = () => {
             />
           </Form.Group>
         </Form>
+        <button className="contador-boton-agregar" onClick={terminarCompra}>
+          Confirmar Compra
+        </button>
       </Container>
-      {/* <input type="text" name="nombre" onChange={usuarioChange} /> */}
     </>
   );
 };

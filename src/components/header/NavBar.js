@@ -48,33 +48,3 @@ function NavBar() {
 }
 
 export default NavBar;
-
-{
-  /* <Container className="navbar" fluid>
-      <div className="navbar-presentacion">
-        <NavLink to="/">
-          <CartWidget />
-          { <h1>GrowShopOnline</h1> }
-        </NavLink>
-      </div>
-      <div className="navbar-menu">
-        <NavLink to="Quienes-Somos">Quienes Somos</NavLink>
-      </div>
-      <div className="navbar-categorias">
-        <span>Categorias:</span>
-        <NavLink to="/categoria/Papelillos">Papelillos</NavLink>
-        <NavLink to="/categoria/Filtros">Filtros</NavLink>
-        <NavLink to="/categoria/Pipa">Pipas</NavLink>
-      </div>
-      <div className="carrito">
-        {cargando ? (
-          " "
-        ) : (
-          <NavLink to="/carrito">
-            <AiOutlineShoppingCart />
-            Carrito <span className="red">{cantidad}</span>
-          </NavLink>
-        )}
-      </div>
-    </Container> */
-}
