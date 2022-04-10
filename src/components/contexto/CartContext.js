@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, memo, useState } from "react";
 
 export const contexto = createContext();
 const { Provider } = contexto;
@@ -8,6 +8,11 @@ const CartContext = ({ children }) => {
   const [total, setTotal] = useState(0);
   const [cantidad, setCantidad] = useState(0);
   const [cargando, setCargando] = useState(true);
+  const [pedido, setPedido] = useState("");
+
+  const ordenDeCompra = (id) => {
+    setPedido(id);
+  };
 
   //Add
   const addItem = (producto, count) => {
@@ -69,11 +74,21 @@ const CartContext = ({ children }) => {
 
   return (
     <Provider
-      value={{ addItem, removeItem, clear, carrito, total, cantidad, cargando }}
+      value={{
+        addItem,
+        removeItem,
+        clear,
+        carrito,
+        total,
+        cantidad,
+        cargando,
+        ordenDeCompra,
+        pedido,
+      }}
     >
       {children}
     </Provider>
   );
 };
 
-export default CartContext;
+export default memo(CartContext);

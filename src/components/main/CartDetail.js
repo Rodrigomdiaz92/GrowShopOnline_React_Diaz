@@ -2,10 +2,13 @@ import { Container, Form } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useContext, useState } from "react";
 import { contexto } from "../contexto/CartContext";
-import { serverTimestamp } from "firebase/firestore";
+import { collection, serverTimestamp, addDoc } from "firebase/firestore";
+import { db } from "../Firebase";
+import { NavLink } from "react-router-dom";
 
 const CartDetail = () => {
-  const { clear, carrito, removeItem, total } = useContext(contexto);
+  const { clear, carrito, removeItem, total, ordenDeCompra } =
+    useContext(contexto);
 
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
@@ -22,10 +25,11 @@ const CartDetail = () => {
       date: serverTimestamp(),
       total: total,
     };
-    /*  const pedidoCollection = collection(db, "ordenes");
-    const pedido = addDoc(pedidoCollection, orden); */
-    console.log(orden);
-
+    const pedidoCollection = collection(db, "ordenes");
+    const pedido = addDoc(pedidoCollection, orden);
+    pedido.then((respuesta) => {
+      ordenDeCompra(respuesta.id);
+    });
     clear();
   };
 
@@ -108,8 +112,12 @@ const CartDetail = () => {
             />
           </Form.Group>
         </Form>
-        <button className="contador-boton-agregar" onClick={terminarCompra}>
-          Confirmar Compra
+        <button
+          className="contador-boton-agregar"
+          href="/end"
+          onClick={terminarCompra}
+        >
+          <NavLink to="/end">Confirmar Compra</NavLink>
         </button>
       </Container>
     </>
