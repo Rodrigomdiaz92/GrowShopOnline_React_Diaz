@@ -7,7 +7,7 @@ import { db } from "../Firebase";
 import { NavLink } from "react-router-dom";
 
 const CartDetail = () => {
-  const { clear, carrito, removeItem, total, ordenDeCompra } =
+  const { clear, carrito, removeItem, total, ordenDeCompra, removeLastItem } =
     useContext(contexto);
 
   const [nombre, setNombre] = useState("");
@@ -71,6 +71,7 @@ const CartDetail = () => {
             <button
               onClick={() => {
                 removeItem(item.producto, item.count);
+                removeLastItem();
               }}
               className="contador-boton-borrar"
             >
@@ -117,7 +118,9 @@ const CartDetail = () => {
           href="/end"
           onClick={terminarCompra}
         >
-          <NavLink to="/end">Confirmar Compra</NavLink>
+          <NavLink className="boton-confirmar-compra" to="/end">
+            Confirmar Compra
+          </NavLink>
         </button>
       </Container>
     </>

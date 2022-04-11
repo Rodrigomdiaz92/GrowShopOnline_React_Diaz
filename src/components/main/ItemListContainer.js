@@ -1,11 +1,11 @@
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { db } from "../Firebase";
 import ItemList from "./ItemList";
 
-const ItemListContainer = (greeting) => {
+const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);
   const [productos, setProductos] = useState([]);
   const { categoria } = useParams();
@@ -28,8 +28,6 @@ const ItemListContainer = (greeting) => {
     }
   }, [categoria]);
 
-  console.log(productos);
-
   return (
     <>
       <Container>
@@ -38,7 +36,17 @@ const ItemListContainer = (greeting) => {
       </Container>
       <Container>
         <ItemList
-          mensaje={loading ? "Cargando.." : "Productos disponibles:"}
+          mensaje={
+            loading ? (
+              <Spinner
+                className="spinner"
+                animation="border"
+                variant="primary"
+              />
+            ) : (
+              "Productos disponibles:"
+            )
+          }
           productos={productos}
         />
       </Container>

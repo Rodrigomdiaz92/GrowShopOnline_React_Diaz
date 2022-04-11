@@ -16,6 +16,7 @@ const QuienesSomos = () => {
             El e-commerce más completo en productos para cultivos y grow.¡Hacé
             tu pedido y obtené un 20% DE DESCUENTO en tu próxima compra!
           </p>
+
           <NavLink className="contador-boton-agregar" to="/">
             Ir a Tienda
           </NavLink>

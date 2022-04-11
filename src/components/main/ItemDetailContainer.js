@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { getDoc, doc } from "firebase/firestore";
@@ -18,15 +18,14 @@ const ItemDetailContainer = () => {
       .catch((err) => console.log(err));
   }, [id]);
 
-  console.log(producto);
-
   return (
     <>
       <Container>
-        <ItemDetail
-          mensaje={loading ? "Cargando.." : "Producto:"}
-          producto={producto}
-        />
+        {loading ? (
+          <Spinner className="spinner" animation="border" variant="primary" />
+        ) : (
+          <ItemDetail mensaje={"Producto:"} producto={producto} />
+        )}
       </Container>
     </>
   );

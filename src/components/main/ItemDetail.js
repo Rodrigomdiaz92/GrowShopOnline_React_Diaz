@@ -33,15 +33,7 @@ const ItemDetail = ({ producto, mensaje }) => {
                 {producto.categoria} {producto.nombre}
               </h2>
             </Card.Title>
-            <p className="detalle-descripcion">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Repudiandae deleniti nulla expedita, sequi fuga neque doloribus
-              error, odio quasi facere sed reprehenderit? Recusandae ipsam
-              veritatis maxime! Quo aperiam ipsa voluptatum obcaecati dolor
-              nihil quod impedit similique excepturi esse consequatur unde sunt
-              fugit iste, maxime inventore rem fugiat aliquid quibusdam
-              deleniti?
-            </p>
+            <p className="detalle-descripcion">{producto.descripcion}</p>
           </div>
         </Card.Header>
         <Card.Body>

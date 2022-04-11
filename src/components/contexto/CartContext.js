@@ -14,14 +14,11 @@ const CartContext = ({ children }) => {
     setPedido(id);
   };
 
-  //Add
   const addItem = (producto, count) => {
     let cartProductos = { producto, count };
     let carritoAuxiliar = [];
 
     if (isInCart(producto)) {
-      console.log(cartProductos);
-      console.log(carrito);
       cartProductos = carrito.find((item) => item.producto.id === producto.id);
       cartProductos.count = cartProductos.count + count;
       carritoAuxiliar = [...carrito];
@@ -33,14 +30,11 @@ const CartContext = ({ children }) => {
       setTotal(total + cartProductos.producto.precio * cartProductos.count);
       setCantidad(cantidad + cartProductos.count);
     }
-    console.log(carritoAuxiliar);
+
     setCarrito(carritoAuxiliar);
     setCargando(false);
-
-    console.log(total);
   };
 
-  //Remove
   const removeItem = (producto, count) => {
     if (isInCart(producto)) {
       const carritoAuxiliar = carrito.filter(
@@ -50,10 +44,14 @@ const CartContext = ({ children }) => {
       setCantidad(cantidad - count);
       setCarrito(carritoAuxiliar);
     }
-    /*  if (carrito.length == 0) {
-      setCargando(true);
-    } */
   };
+
+  const removeLastItem = () => {
+    if (carrito.length == 1) {
+      clear();
+    }
+  };
+
   //Clear
   const clear = () => {
     setCarrito([]);
@@ -66,7 +64,6 @@ const CartContext = ({ children }) => {
     return (
       carrito &&
       carrito.some((item) => {
-        console.log(item, producto);
         return item.producto.id === producto.id;
       })
     );
@@ -84,6 +81,7 @@ const CartContext = ({ children }) => {
         cargando,
         ordenDeCompra,
         pedido,
+        removeLastItem,
       }}
     >
       {children}

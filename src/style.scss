@@ -36,6 +36,13 @@ main {
   align-items: center;
 }
 
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+}
+
 /*--------------Quienes Somos----------------*/
 
 .presentacion {
@@ -198,6 +205,12 @@ main {
   border-radius: 5px;
   margin-right: 1rem;
 }
+
+.boton-confirmar-compra {
+  text-decoration: none;
+  color: white;
+}
+
 .contador-boton-agregar {
   padding: 5px;
   font-style: bold;
@@ -265,6 +278,11 @@ main {
 }
 
 /*-------Carrito-----*/
+
+#pedido {
+  color: yellowgreen;
+  font-weight: bold;
+}
 
 .titulo-datos {
   text-align: center;
