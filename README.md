@@ -2,6 +2,8 @@
 
 :alien::alien::alien:
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fdf04a29-888e-421f-9fb1-8ab121e90435/deploy-status)](https://app.netlify.com/sites/monumental-gumption-257506/deploys)
+
 ## Proyecto GrowshopOnline Final React.js
 
 ## Coder House - Diaz Rodrigo
@@ -32,7 +34,7 @@ This is my final project from the CoderHouse Full Stack React.js course. It is a
 
 ---
 
-## :alien::point_right:[Visit GrowshopOnline Website]():point_left: :alien:
+## :alien::point_right:[Visit GrowshopOnline Website](https://growshoponline.netlify.app/):point_left: :alien:
 
 ---
 
