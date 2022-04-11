@@ -1,4 +1,5 @@
 import { createContext, memo, useState } from "react";
+import { toast } from "react-toastify";
 
 export const contexto = createContext();
 const { Provider } = contexto;
@@ -30,7 +31,7 @@ const CartContext = ({ children }) => {
       setTotal(total + cartProductos.producto.precio * cartProductos.count);
       setCantidad(cantidad + cartProductos.count);
     }
-
+    toast.success("Se agrego el producto al carrito");
     setCarrito(carritoAuxiliar);
     setCargando(false);
   };
@@ -43,6 +44,7 @@ const CartContext = ({ children }) => {
       setTotal(total - producto.precio * count);
       setCantidad(cantidad - count);
       setCarrito(carritoAuxiliar);
+      toast.info("Se elimino el producto del carrito");
     }
   };
 
@@ -58,6 +60,7 @@ const CartContext = ({ children }) => {
     setTotal(0);
     setCantidad(0);
     setCargando(true);
+    toast.info("No hay productos en el carrito");
   };
   //isinCart
   const isInCart = (producto) => {
