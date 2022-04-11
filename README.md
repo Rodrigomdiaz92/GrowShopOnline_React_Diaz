@@ -1,6 +1,8 @@
 ![Proyecto GrowShopOnline React](https://github.com/Rodrigomdiaz92/GrowShopOnline_React_Diaz/blob/master/public/img/growshoponline.png?raw=true)
-##Proyecto GrowshopOnline Final React.js
-##Coder House - Diaz Rodrigo
+
+## Proyecto GrowshopOnline Final React.js
+
+## Coder House - Diaz Rodrigo
 
 ### Project description:
 
