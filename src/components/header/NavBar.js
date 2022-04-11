@@ -17,8 +17,10 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/quienes-somos" title="Quienes Somos">
-              Quienes Somos
+            <Nav.Link>
+              <NavLink id="quienes-somos" to="/quienes-somos">
+                Quienes somos
+              </NavLink>
             </Nav.Link>
 
             <NavDropdown

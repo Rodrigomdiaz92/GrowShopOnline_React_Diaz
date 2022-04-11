@@ -24,6 +24,11 @@ body {
   );
 }
 
+#quienes-somos {
+  text-decoration: none;
+  color: #c7c8c9;
+}
+
 h1 {
   text-align: center;
   margin-top: 3rem;
@@ -212,6 +217,7 @@ main {
 }
 
 .contador-boton-agregar {
+  margin: 10px;
   padding: 5px;
   font-style: bold;
   color: white;
@@ -219,6 +225,10 @@ main {
   border: 2px solid white;
   border-radius: 5px;
   text-decoration: none;
+}
+
+#blue {
+  background-color: #0b5ed7;
 }
 
 /*------------------DETALLE DE PRODUCTO-------------------*/
@@ -266,6 +276,8 @@ main {
 .detalle-3 {
   margin-top: auto;
   margin-bottom: auto;
+  grid-template-rows: 1.5fr 1fr;
+  gap: 10px;
 }
 .detalle-producto-info {
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -322,4 +334,8 @@ main {
   margin-right: 15px;
   text-align: center;
   width: 1.6em;
+}
+
+#color {
+  color: rgb(237, 80, 80);
 }

@@ -30,6 +30,7 @@ const CartDetail = () => {
     pedido.then((respuesta) => {
       ordenDeCompra(respuesta.id);
     });
+
     clear();
   };
 

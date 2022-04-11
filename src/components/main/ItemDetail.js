@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { contexto } from "../contexto/CartContext";
 import { Card } from "react-bootstrap";
@@ -66,6 +66,12 @@ const ItemDetail = ({ producto, mensaje }) => {
                     Terminar mi compra
                   </Link>
                 ) : null}
+                {elegido ? (
+                  <NavLink id="blue" className="contador-boton-agregar" to="/">
+                    Volver a Tienda
+                  </NavLink>
+                ) : null}
+                <br />
               </div>
             </div>
           </Card.Text>

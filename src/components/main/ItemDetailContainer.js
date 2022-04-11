@@ -4,6 +4,7 @@ import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../Firebase";
+import { toast } from "react-toastify";
 
 const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
@@ -15,7 +16,7 @@ const ItemDetailContainer = () => {
     getDoc(docRef)
       .then((res) => setProducto(res.data()))
       .then((resp) => setLoading(false))
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error("Ups, se ha producido un error"));
   }, [id]);
 
   return (
